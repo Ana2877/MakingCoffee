@@ -9,26 +9,28 @@ public class CoffeeMachine {
     static int cups = 9;
 
     static public void buyCoffee () {
-        int coffeeType;
+        String coffeeType;
 
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
-        coffeeType = scanner.nextInt();
+        coffeeType = scanner.next();
 
         switch (coffeeType) {
-            case 1:
+            case "1":
                 Espresso espresso = new Espresso();
                 if (espresso.canMake())
                     espresso.make();
                 break;
-            case 2:
+            case "2":
                 Latte latte = new Latte();
                 if (latte.canMake())
                     latte.make();
                 break;
-            case 3:
+            case "3":
                 Cappuccino cappuccino = new Cappuccino();
                 if (cappuccino.canMake())
                     cappuccino.make();
+                break;
+            case "back":
                 break;
         }
     }
